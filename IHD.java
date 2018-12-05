@@ -7,8 +7,8 @@ public class IHD {
   public int outputToSensor;  //output to sensor
   private Sensor sensor;      //
 
-  private const int TO_SENSOR_3V = 3;
-  private const int TO_SENSOR_0V = 0;
+  private final int TO_SENSOR_3V = 3;
+  private final int TO_SENSOR_0V = 0;
 
   public void initialize(){
 
