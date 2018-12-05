@@ -1,0 +1,5 @@
+//IAD
+
+public class IAD {
+
+}
