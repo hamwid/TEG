@@ -32,7 +32,7 @@ public class IHD {
   }
 
   //Put 0V on "start/restart"-pin of sensor
-  public void readSensor(){
+  private void readSensor(){
     outputToSensor = TO_SENSOR_0V;
   }
 
