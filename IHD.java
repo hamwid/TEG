@@ -10,6 +10,14 @@ public class IHD {
   private const int TO_SENSOR_3V = 3;
   private const int TO_SENSOR_0V = 0;
 
+  public void initialzie(){
+
+  }
+
+  public void execute(){
+    
+  }
+
   private int mean(int i1, int i2){
     mean = (i1+i2)/2;
   }
