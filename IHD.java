@@ -36,7 +36,7 @@ public class IHD {
     outputToSensor = TO_SENSOR_0V;
   }
 
-  public static void getInputFromSensor(){
+  public void getInputFromSensor(){
     this.readSensor();
     read1 = sensor.originalOutput;
     read2 = sensor.safetyOutput;
