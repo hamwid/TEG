@@ -9,7 +9,8 @@ public class IAD {
   private IHD ihd1;        //first connected IHD
   private IHD ihd2;        //second connected IHD
 
-  //Initialize IAD, connect with 2 IHD
+  //Initialize IAD, connect with 2 IHD - this is IAD2 or IAD3
+  //Code that runs the first cycle, or if external request of initialize()
   public void initialize(IHD ihd_1, IHD ihd_2){
     ihd1 = ihd_1;
     ihd2 = ihd_2;
@@ -17,21 +18,23 @@ public class IAD {
     input2 = 0;
     output1 = false;
     output2 = false;
-    IHD_limit = 30;
+    IHD_limit = 30; //lower distance-limit to objects
   }
 
-  //Initialize IAD, connect with 1 IHD
+  //Initialize IAD, connect with 1 IHD - this is IAD1 (rear)
+  //Code that runs the first cycle, or if external request of initialize()
   public void initialize(IHD ihd_1){
     ihd1 = ihd_1;
-    ihd2 = ihd_1;
+    ihd2 = ihd_1; //for simple re-use of other methods, instead of new methods
     input1 = 0;
     input2 = 0;
     output1 = false;
     output2 = false;
-    IHD_limit = 5;
+    IHD_limit = 5; //lower distance-limit to objects
   }
 
   //Execute IHD
+  //Code that runs every cycle, except if external request of initialize()
   public void execute(){
     this.analyzeData();
   }
@@ -40,11 +43,11 @@ public class IAD {
   private void analyzeData(){
     input1 = ihd1.getRead1();
     input2 = ihd2.getRead2();
-    output1 = (input1 > IHD_limit);
-    output2 = (input2 > IHD_limit);
+    output1 = (input1 > IHD_limit); //true if INPUT > LIMIT
+    output2 = (input2 > IHD_limit); //true if INPUT > LIMIT
   }
 
-  //Give output-data
+  //Give output-data upon request
   public boolean[] getData() {
     boolean[] data = new boolean[2];
     data[0] = output1;
