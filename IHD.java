@@ -27,20 +27,20 @@ public class IHD {
     this.readFromSensor();
   }
 
-  //Calculate mean between two integers
-  private int mean(int i1, int i2){
-    mean = (i1+i2)/2;
-    return mean;
-  }
-
   //Put 3V on "start/restart"-pin of sensor
-  private void startSensor(){
+  public void startSensor(){
     outputToSensor = TO_SENSOR_3V;
   }
 
   //Put 0V on "start/restart"-pin of sensor
-  private void listenToSensor(){
+  public void listenToSensor(){
     outputToSensor = TO_SENSOR_0V;
+  }
+
+  //Calculate mean between two integers
+  private int mean(int i1, int i2){
+    mean = (i1+i2)/2;
+    return mean;
   }
 
   //Collect data from connected sensor
@@ -59,5 +59,12 @@ public class IHD {
   }
   public int getMean(){
     return mean;
+  }
+  //Call-methods for testers
+  public int callMean(int i1, int i2) {
+    return mean(i1, i2);
+  }
+  public void callReadFromSensor(){
+    this.readFromSensor();
   }
 }
