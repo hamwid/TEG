@@ -11,6 +11,7 @@ public class IHD {
   final private int TO_SENSOR_0V = 0; //0V = "listen to sensor-values"
 
   //Initialize IHD, connect with 1 Sensor
+  //Code that runs the first cycle, or if external request of initialize()
   public void initialize(Sensor sensor_1){
     read1 = 0;
     read2 = 0;
@@ -20,12 +21,13 @@ public class IHD {
   }
 
   //Execute IHD
+  //Code that runs every cycle, except if external request of initialize()
   public void execute(){
     this.listenToSensor();
     this.readFromSensor();
   }
 
-  //Calculate mean
+  //Calculate mean between two integers
   private int mean(int i1, int i2){
     mean = (i1+i2)/2;
     return mean;
@@ -42,6 +44,7 @@ public class IHD {
   }
 
   //Collect data from connected sensor
+  //In sensor, data is stored as two integers read during the same cycle
   private void readFromSensor(){
     read1 = sensor.originalOutput;
     read2 = sensor.safetyOutput;
