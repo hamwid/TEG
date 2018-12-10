@@ -54,4 +54,9 @@ public class IAD {
     data[1] = output2;
     return data;
   }
+
+  //Call-method for testers
+  public void callAnalyzeData(){
+    this.analyzeData();
+  }
 }
