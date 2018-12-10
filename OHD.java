@@ -32,20 +32,24 @@ public class OHD{
   }
 
   //Execute OHD
+  //Code that runs every cycle, except if external request of initialize()
   public void execute(){
     readDataFromAllIAD();
   }
 
   //Read input-data and set output-data
   private void readDataFromAllIAD(){
+    //read data from IAD:s
     dataIAD1 = iad1.getData();
     dataIAD2 = iad2.getData();
     dataIAD3 = iad3.getData();
+    //update booleans based on IAD data
     rear     = dataIAD1[0];
     left     = dataIAD2[0];
     forwardL = dataIAD2[1];
     right    = dataIAD3[0];
     forwardR = dataIAD3[1];
+    //update output-data based on booleans
     output[0] = rear;
     output[1] = left;
     output[2] = forwardL;
@@ -53,7 +57,7 @@ public class OHD{
     output[4] = forwardR;
   }
 
-  //Give output-data
+  //Give output-data upon request (from external system)
   public boolean[] getOutput(){
     return output;
   }
