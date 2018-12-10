@@ -61,4 +61,8 @@ public class OHD{
   public boolean[] getOutput(){
     return output;
   }
+  //Call-method for testers
+  public void callReadDataFromAllIAD(){
+    this.readDataFromAllIAD();
+  }
 }
