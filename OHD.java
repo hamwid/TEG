@@ -61,6 +61,17 @@ public class OHD{
   public boolean[] getOutput(){
     return output;
   }
+
+  //Get-methods for testers
+  public boolean[] getBools(){
+    boolean[] bools = {rear, left, forwardL, right, forwardR};
+    return bools;
+  }
+  public boolean[] getDataAID(){
+    boolean[] data = { dataIAD1[0], dataIAD1[1], dataIAD2[0],
+                       dataIAD2[1], dataIAD3[0], dataIAD3[1] };
+    return data;
+  }
   //Call-method for testers
   public void callReadDataFromAllIAD(){
     this.readDataFromAllIAD();
