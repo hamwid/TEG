@@ -31,6 +31,11 @@ public class IHD {
     return mean;
   }
 
+  //Get mean of read1 and read2
+  public int getMean(){
+    return mean;
+  }
+
   //Put 3V on "start/restart"-pin of sensor
   private void startSensor(){
     outputToSensor = TO_SENSOR_3V;
@@ -53,8 +58,5 @@ public class IHD {
   }
   public int getRead2(){
     return read2;
-  }
-  public int getMean(){
-    return mean;
   }
 }
