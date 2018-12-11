@@ -41,8 +41,8 @@ public class IAD {
 
   //Analyze data from connected IHD(s) and set output-data
   private void analyzeData(){
-    input1 = ihd1.getRead1();
-    input2 = ihd2.getRead2();
+    input1 = ihd1.getMean();
+    input2 = ihd2.getMean();
     output1 = (input1 > IHD_limit); //true if INPUT > LIMIT
     output2 = (input2 > IHD_limit); //true if INPUT > LIMIT
   }
