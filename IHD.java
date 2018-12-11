@@ -43,6 +43,11 @@ public class IHD {
     return mean;
   }
 
+  //Get mean of read1 and read2
+  public int getMean(){
+    return mean;
+  }
+
   //Collect data from connected sensor
   //In sensor, data is stored as two integers read during the same cycle
   private void readFromSensor(){
@@ -56,9 +61,6 @@ public class IHD {
   }
   public int getRead2(){
     return read2;
-  }
-  public int getMean(){
-    return mean;
   }
   //Call-methods for testers
   public int callMean(int i1, int i2) {
