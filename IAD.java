@@ -51,4 +51,24 @@ public class IAD {
     data[1] = output2;
     return data;
   }
+
+  //Methods for testers
+  public int getInput1(){
+    return this.input1;
+  }
+  public int getInput2(){
+    return this.input2;
+  }
+  public boolean getOutput1(){
+    return this.output1;
+  }
+  public boolean getOutput2(){
+    return this.output2;
+  }
+  public int getLimit(){
+    return this.IHD_limit;
+  }
+  public void callAnalyzeData(){
+    this.analyzeData();
+  }
 }

@@ -52,11 +52,17 @@ public class IHD {
     read2 = sensor.safetyOutput;
   }
 
-  //Get-methods for testers
+  //Methods for testers
   public int getRead1(){
-    return read1;
+    return this.read1;
   }
   public int getRead2(){
-    return read2;
+    return this.read2;
+  }
+  public void callListenToSensor(){
+    this.listenToSensor();
+  }
+  public void callReadFromSensor(){
+    this.readFromSensor();
   }
 }

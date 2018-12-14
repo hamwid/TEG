@@ -57,4 +57,16 @@ public class OHD{
   public boolean[] getOutput(){
     return output;
   }
+
+  //Methods for testers
+  public boolean[] getBooleans(){
+    boolean[] data = {rear, left, forwardL, right, forwardR};
+    return data;
+  }
+  public boolean[] getDataAID(){
+    boolean[] data = { dataIAD1[0], dataIAD1[1],
+                       dataIAD2[0], dataIAD2[1],
+                       dataIAD3[0], dataIAD3[1] };
+    return data;
+  }
 }
