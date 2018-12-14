@@ -43,4 +43,10 @@ public class Sensor {
   public void reconfigure(){
     @ReconfigureSensor();
   }*/
+
+  //Method added for testers
+  public void setSensor(int input){
+    originalOutput = input;
+    safetyOutput   = input;
+  }
 }
