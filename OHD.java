@@ -63,7 +63,7 @@ public class OHD{
   }
 
   //Get-methods for testers
-  public boolean[] getBools(){
+  public boolean[] getBooleans(){
     boolean[] bools = {rear, left, forwardL, right, forwardR};
     return bools;
   }
