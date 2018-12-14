@@ -52,6 +52,14 @@ public class IAD {
     boolean[] data = new boolean[2];
     data[0] = output1;
     data[1] = output2;
+    for (int i=0;i<data.length;i++){
+      if (data[i] > 200) { //If input-data is larger than 200
+        data[i] = 200;     //set it to 200
+      }
+      if (data[i] < 0) {   //If input-data is smaller than 0
+        data[i] = 0;       //set it to 0
+      }
+    }
     return data;
   }
 
