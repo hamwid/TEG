@@ -1,5 +1,4 @@
 //OHD
-package edu.holger;
 
 public class OHD{
   private boolean rear;                      //rear sensor > 5cm from object

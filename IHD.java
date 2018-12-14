@@ -1,5 +1,4 @@
 //IHD
-package edu.holger;
 
 public class IHD {
   private int read1;                //input from sensor, "original output"
