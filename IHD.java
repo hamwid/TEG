@@ -42,12 +42,12 @@ public class IHD {
   }
 
   //Put 0V on "start/restart"-pin of sensor
-  private void listenToSensor(){
+  public void listenToSensor(){
     outputToSensor = TO_SENSOR_0V;
   }
 
   //Collect data from connected sensor
-  private void readFromSensor(){
+  public void readFromSensor(){
     read1 = sensor.originalOutput;
     read2 = sensor.safetyOutput;
   }
@@ -58,11 +58,5 @@ public class IHD {
   }
   public int getRead2(){
     return this.read2;
-  }
-  public void callListenToSensor(){
-    this.listenToSensor();
-  }
-  public void callReadFromSensor(){
-    this.readFromSensor();
   }
 }
