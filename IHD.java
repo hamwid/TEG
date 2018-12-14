@@ -42,21 +42,21 @@ public class IHD {
   }
 
   //Put 0V on "start/restart"-pin of sensor
-  private void listenToSensor(){
+  public void listenToSensor(){
     outputToSensor = TO_SENSOR_0V;
   }
 
   //Collect data from connected sensor
-  private void readFromSensor(){
+  public void readFromSensor(){
     read1 = sensor.originalOutput;
     read2 = sensor.safetyOutput;
   }
 
-  //Get-methods for testers
+  //Methods for testers
   public int getRead1(){
-    return read1;
+    return this.read1;
   }
   public int getRead2(){
-    return read2;
+    return this.read2;
   }
 }
