@@ -43,6 +43,18 @@ public class IAD {
   private void analyzeData(){
     input1 = ihd1.getMean();
     input2 = ihd2.getMean();
+    if (input1 > 200) { //If input-data is larger than 200
+      input1 = 200;     //set it to 200
+    }
+    if (input1 < 0) {   //If input-data is smaller than 0
+      input1 = 0;       //set it to 0
+    }
+    if (input2 > 200) { //If input-data is larger than 200
+      input2 = 200;     //set it to 200
+    }
+    if (input2 < 0) {   //If input-data is smaller than 0
+      input2 = 0;       //set it to 0
+    }
     output1 = (input1 > IHD_limit); //true if INPUT > LIMIT
     output2 = (input2 > IHD_limit); //true if INPUT > LIMIT
   }
