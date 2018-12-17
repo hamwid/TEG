@@ -40,6 +40,21 @@ public class IAD {
   private void analyzeData(){
     input1 = ihd1.getMean();
     input2 = ihd2.getMean();
+    //IAD_002 - input shall not drop below 0
+    if(input1 < 0){
+      input1 = 0;
+    }
+    if(input2 < 0){
+      input2 = 0;
+    }
+    //IAD_003 - input shall not exceed 200
+    if(input1 > 200){
+      input1 = 200;
+    }
+    if(input2 > 200){
+      input2 = 200;
+    }
+
     output1 = (input1 > IHD_limit);
     output2 = (input2 > IHD_limit);
   }
