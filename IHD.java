@@ -9,6 +9,7 @@ public class IHD {
 
   final private int TO_SENSOR_3V = 3; //3V = "reset sensor"
   final private int TO_SENSOR_0V = 0; //0V = "listen to sensor-values"
+  final private int TO_SWITCH_2V = 2; //2V = "turn of sensor completely"
 
   //Initialize IHD, connect with 1 Sensor
   public void initialize(Sensor sensor_1){
@@ -31,25 +32,42 @@ public class IHD {
     return mean;
   }
 
-  //Get mean of read1 and read2
-  public int getMean(){
+  //Obtain mean between read1 and read2
+  public int getOutput(){
     return mean;
   }
 
   //Put 3V on "start/restart"-pin of sensor
-  private void startSensor(){
+  public void startSensor(){
     outputToSensor = TO_SENSOR_3V;
   }
 
   //Put 0V on "start/restart"-pin of sensor
-  private void listenToSensor(){
+  public void listenToSensor(){
     outputToSensor = TO_SENSOR_0V;
+  }
+
+  //Put 0V on "start/restart"-pin of sensor
+  public void turnOfSensor(){
+    outputToSensor = TO_SWITCH_2V;
   }
 
   //Collect data from connected sensor
   private void readFromSensor(){
     read1 = sensor.originalOutput;
     read2 = sensor.safetyOutput;
+    if(read1 < 0){
+      read1 = 0;
+    }
+    if(read1 > 200){
+      read1 = 200;
+    }
+    if(read2 < 0){
+      read2 = 0;
+    }
+    if(read2 > 200){
+      read2 = 200;
+    }
   }
 
   //Get-methods for testers
