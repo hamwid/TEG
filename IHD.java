@@ -26,9 +26,8 @@ public class IHD {
   }
 
   //Calculate mean
-  private int mean(int i1, int i2){
+  private void mean(int i1, int i2){
     mean = (i1+i2)/2;
-    return mean;
   }
 
   //Get mean of read1 and read2
@@ -37,7 +36,7 @@ public class IHD {
   }
 
   //Put 3V on "start/restart"-pin of sensor
-  private void startSensor(){
+  public void startSensor(){
     outputToSensor = TO_SENSOR_3V;
   }
 
@@ -50,6 +49,7 @@ public class IHD {
   public void readFromSensor(){
     read1 = sensor.originalOutput;
     read2 = sensor.safetyOutput;
+    mean(read1, read2);
   }
 
   //Methods for testers
