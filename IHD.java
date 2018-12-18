@@ -25,6 +25,7 @@ public class IHD {
   public void execute(){
     this.listenToSensor();
     this.readFromSensor();
+    this.mean();
   }
 
   //Put 3V on "start/restart"-pin of sensor
@@ -38,9 +39,8 @@ public class IHD {
   }
 
   //Calculate mean between two integers
-  private int mean(int i1, int i2){
-    mean = (i1+i2)/2;
-    return mean;
+  private void mean(){
+    mean = (read1+read2)/2;
   }
 
   //Get mean of read1 and read2
